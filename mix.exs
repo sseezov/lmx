@@ -41,6 +41,7 @@ defmodule Lmx.MixProject do
     [
       {:phoenix, "~> 1.8.2"},
       {:phoenix_ecto, "~> 4.5"},
+      {:dotenv_parser, "~> 2.0", only: [:dev, :test]},
       {:cors_plug, "~> 3.0", only: [:dev]},
       {:ecto_sql, "~> 3.13"},
       {:postgrex, ">= 0.0.0"},

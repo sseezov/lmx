@@ -2,10 +2,6 @@ import Config
 
 # Configure your database
 config :lmx, Lmx.Repo,
-  username: "postgres",
-  password: "219219",
-  hostname: "localhost",
-  database: "lmx_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -19,6 +15,7 @@ config :lmx, Lmx.Repo,
 config :lmx, LmxWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
+  url: [host: "localhost", port: 4000, scheme: "http"],
   http: [ip: {127, 0, 0, 1}],
   check_origin: false,
   code_reloader: true,
