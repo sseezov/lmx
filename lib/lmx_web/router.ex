@@ -5,11 +5,12 @@ defmodule LmxWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", LmxWeb do
-    get "/*path", PageController, :index
+  scope "/api", LmxWeb do
+    pipe_through :api
+    resources "/users", UserController, except: [:new, :edit]
   end
 
-  scope "/api", LmxWeb do
-    # Здесь позже будут API-роуты
+  scope "/", LmxWeb do
+    get "/*path", PageController, :index
   end
 end
