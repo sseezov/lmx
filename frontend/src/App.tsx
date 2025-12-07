@@ -1,15 +1,18 @@
-import './App.css'
+import { UserForm } from './components/UserForm';
+import './App.css';
 
 function App() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>LMS Frontend</h1>
-      <p>React + Vite + Phoenix API</p>
-      <div>
-        <button onClick={() => alert('Working!')}>Test Button</button>
-      </div>
+    <div className="app">
+      <header>
+        <h1>LMS Admin</h1>
+        <p>Тестовая форма для создания пользователя через Phoenix API</p>
+      </header>
+      <main>
+        <UserForm />
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
