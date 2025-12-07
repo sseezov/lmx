@@ -3,15 +3,14 @@
 }
 
 .app {
-  display: grid;
-  place-items: center;
   min-height: 100vh;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  width: 100%;
-  max-width: 500px;
+  flex: 1;
+  padding: 2rem;
 }
 
 header {
@@ -26,4 +25,25 @@ header h1 {
 
 header p {
   color: #666;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-section,
+.table-section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

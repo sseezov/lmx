@@ -1,17 +1,24 @@
-import { UserForm } from './components/UserForm';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Navbar } from './components/Navbar';
+import { Home } from './pages/home';
+import { Login } from './pages/Login';
+import { Users } from './pages/Users';
 import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <header>
-        <h1>LMS Admin</h1>
-        <p>Тестовая форма для создания пользователя через Phoenix API</p>
-      </header>
-      <main>
-        <UserForm />
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/users" element={<Users />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
